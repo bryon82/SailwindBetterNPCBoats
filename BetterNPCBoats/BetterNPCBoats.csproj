@@ -62,10 +62,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BNB_Plugin.cs" />
-    <Compile Include="NPCFishingBoats\AddFishingBoats.cs" />
-    <Compile Include="NPCFishingBoats\BetterNPCFishingBoats.cs" />
+    <Compile Include="NPCFishingBoats\FishingBoats.cs" />
+    <Compile Include="NPCFishingBoats\BetterNPCFishingBoat.cs" />
     <Compile Include="NPCFishingBoats\FishingBoatData.cs" />
-    <Compile Include="Patches\NPCBoatPatches.cs" />
+    <Compile Include="NPCFishingBoats\FishingBoatScenes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\BoatRegion.cs" />
     <Compile Include="Utilities\Extensions.cs" />

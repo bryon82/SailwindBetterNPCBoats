@@ -4,6 +4,7 @@ using HarmonyLib;
 using System.Collections;
 using System.Reflection;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace BetterNPCBoats
 {
@@ -35,13 +36,19 @@ namespace BetterNPCBoats
             //Configs.InitializeConfigs();
 
             Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), PLUGIN_GUID);
-            StartCoroutine(AddBoats());
+            SceneManager.sceneLoaded += (scene, _) =>
+            {
+                if (scene.name == "the ocean")
+                    StartCoroutine(AddBoats());
+            };
+            SceneManager.sceneLoaded += FishingBoatScenes.SceneLoaded;
+            SceneManager.sceneUnloaded += FishingBoatScenes.SceneUnloaded;
         }
 
         private static IEnumerator AddBoats()
         {
             yield return new WaitUntil(() => Refs.shiftingWorld != null);
-            AddFishingBoats.CreateFishingBoats();
+            FishingBoats.Initialize();
 
             yield return null;
         }
