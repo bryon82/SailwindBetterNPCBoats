@@ -1,4 +1,5 @@
-﻿using System;
+﻿using cakeslice;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -40,21 +41,24 @@ namespace BetterNPCBoats
                 var fishingBoat = GameObject.Instantiate(data.BoatTemplate);
                 fishingBoat.name = data.BoatName;
                 GameObject.Destroy(fishingBoat.GetComponent<SaveableObject>());
-                
+
                 List<Transform> crates = new List<Transform>
-            {
-                fishingBoat.GetComponentsInChildren<Transform>().FirstOrDefault(t => t.name == "crate (static) (1)"),
-                fishingBoat.GetComponentsInChildren<Transform>().FirstOrDefault(t => t.name == "crate (static) (2)"),
-                fishingBoat.GetComponentsInChildren<Transform>().FirstOrDefault(t => t.name == "crate (static) (3)"),
-                fishingBoat.GetComponentsInChildren<Transform>().FirstOrDefault(t => t.name == "crate (static) (5)")
-            };
+                {
+                    fishingBoat.GetComponentsInChildren<Transform>().FirstOrDefault(t => t.name == "crate (static) (1)"),
+                    fishingBoat.GetComponentsInChildren<Transform>().FirstOrDefault(t => t.name == "crate (static) (2)"),
+                    fishingBoat.GetComponentsInChildren<Transform>().FirstOrDefault(t => t.name == "crate (static) (3)"),
+                    fishingBoat.GetComponentsInChildren<Transform>().FirstOrDefault(t => t.name == "crate (static) (5)")
+                };
                 crates.ForEach(t => { if (t != null) GameObject.Destroy(t.gameObject); });
+                fishingBoat.GetComponentsInChildren<ShipyardSailColChecker>().ToList().ForEach(c => GameObject.Destroy(c));
+                fishingBoat.GetComponentsInChildren<ShipyardSailColCheckerSub>().ToList().ForEach(c => GameObject.Destroy(c));
+                fishingBoat.GetComponentsInChildren<Outline>().ToList().ForEach(c => GameObject.Destroy(c));
 
                 var oldController = fishingBoat.GetComponent<NPCBoatController>();
                 var fishingController = fishingBoat.AddComponent<BetterNPCFishingBoat>();
                 fishingController.sailAngleControllers = oldController.sailAngleControllers;
                 fishingController.sailReefControllers = oldController.sailReefControllers;
-                GameObject.Destroy(oldController);                
+                GameObject.Destroy(oldController);
                 fishingController.pilot = fishingBoat.GetComponentsInChildren<Transform>()
                     .FirstOrDefault(t => t.name.Contains("Modular NPC")).gameObject;
 

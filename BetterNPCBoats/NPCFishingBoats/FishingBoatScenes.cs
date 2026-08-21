@@ -45,17 +45,50 @@ namespace BetterNPCBoats
                 }
             },
             {
+                // dragon cliffs
+                9, new List<ActiveFishingBoatData>
+                {
+                    new ActiveFishingBoatData(new Vector3(-250.8f, 170f, -630.2f), new Vector3(11f, 210f, -1016.2f), true),
+                    new ActiveFishingBoatData(new Vector3(-239.4f, 170f, -659.9f), new Vector3(-18.8f, 20f, -891.9f), true),
+                    new ActiveFishingBoatData(new Vector3(-245.3f, 190f, -554.3f), new Vector3(-172.8f, 172f, -770.2f), true),
+                    new ActiveFishingBoatData(new Vector3(-236.3f, 170f, -689.1f), new Vector3(-2.1f, 62f, -936.6f), true)
+                }
+            },
+            {
+                // sanctuary
+                10, new List<ActiveFishingBoatData>
+                {
+                    new ActiveFishingBoatData(new Vector3(203.1f, 10f, 41.5f), new Vector3(459.4f, 180f, -42.4f))
+                }
+            },
+            {
                 // crab beach
                 11, new List<ActiveFishingBoatData>
                 {
-                    new ActiveFishingBoatData(new Vector3(607f, 150f, 158f), new Vector3(426f, 180f, 471.5f)),
+                    new ActiveFishingBoatData(new Vector3(595.2f, 190f, 110.6f), new Vector3(426f, 180f, 471.5f)),
+                    new ActiveFishingBoatData(new Vector3(754.7f, 190f, 214.6f), new Vector3(784.1f, 260f, 562.7f)),
+                    new ActiveFishingBoatData(new Vector3(692.2f, 190f, 185f), new Vector3(1012.2f, 62f, 600f), true),
+                }
+            },
+            {
+                // new port
+                12, new List<ActiveFishingBoatData>
+                {
+                    new ActiveFishingBoatData(new Vector3(439.4f, 70f, -234.9f), new Vector3(621f, 0f, 221f))
+                }
+            },
+            {
+                // sage hills
+                13, new List<ActiveFishingBoatData>
+                {
+                    new ActiveFishingBoatData(new Vector3(-91.7f, 70f, -227.1f), new Vector3(-132.8f, 270f, -309.9f))
                 }
             },
             {
                 // siren song
                 21, new List<ActiveFishingBoatData>
                 {
-                    new ActiveFishingBoatData(new Vector3(-134.4f, 10f, 43.4f), new Vector3(-230f, 270f, 240.4f)),
+                    new ActiveFishingBoatData(new Vector3(-171f, 260f, 11.9f), new Vector3(-349.1f, 100f, 86.3f)),
                 }
             },
             {
@@ -66,11 +99,10 @@ namespace BetterNPCBoats
                     new ActiveFishingBoatData(new Vector3(131f, 260f, 65f), new Vector3(183f, 40f, 278.5f)),
                     new ActiveFishingBoatData(new Vector3(167f, 290f, 59f), new Vector3(220f, 60f, 215.2f)),
                     new ActiveFishingBoatData(new Vector3(195f, 240f, 26f), new Vector3(281.4f, 40f, 138.7f), true),
-                    new ActiveFishingBoatData(new Vector3(227f, 290f, -30f), new Vector3(308.4f, 60f, 118.1f), true),
+                    new ActiveFishingBoatData(new Vector3(227f, 290f, -30f), new Vector3(357.3f, 60f, -6.4f), true),
                 }
             }
-
-        };        
+        };
 
         internal static void SceneLoaded(Scene scene, LoadSceneMode _)
         {

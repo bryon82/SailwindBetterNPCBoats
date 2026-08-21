@@ -66,6 +66,7 @@
     <Compile Include="NPCFishingBoats\BetterNPCFishingBoat.cs" />
     <Compile Include="NPCFishingBoats\FishingBoatData.cs" />
     <Compile Include="NPCFishingBoats\FishingBoatScenes.cs" />
+    <Compile Include="Patches\Storm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\BoatRegion.cs" />
     <Compile Include="Utilities\Extensions.cs" />
