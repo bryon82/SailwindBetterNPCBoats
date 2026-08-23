@@ -34,14 +34,25 @@ namespace BetterNPCBoats
         private Collider col;
         internal int sceneIndex;
 
-        private void Start()
+        private void Awake()
         {
-            LogDebug($"BetterNPCFishingBoat Start: {gameObject.name} in scene {sceneIndex}");
             col = GetComponent<Collider>();
             rigidbody = GetComponent<Rigidbody>();
+            target = new GameObject($"target {transform.name}").transform;
+        }
+
+        internal void Init()
+        {
+            LogDebug($"BetterNPCFishingBoat Init: {gameObject.name} in scene {sceneIndex}");
             fishingPos = target.localPosition;
             parkedPos = transform.localPosition;
             timeAdjustment = Random.Range(-0.4f, 0.4f);
+
+            goingFishing = false;
+            atFishingSpot = false;
+            atParkingSpot = false;
+            currentTarget = null;
+
             GoHome();
         }
 

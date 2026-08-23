@@ -27,13 +27,6 @@ namespace BetterNPCBoats
         private static Dictionary<int, List<ActiveFishingBoatData>> dataDict = new Dictionary<int, List<ActiveFishingBoatData>>
         {
             {
-                // neverdin
-                3, new List<ActiveFishingBoatData>
-                {
-                    new ActiveFishingBoatData(new Vector3(-82f, 0f, 382f), new Vector3(300f, 180f, 470f))
-                }
-            },
-            {
                 // gold rock city
                 1, new List<ActiveFishingBoatData>
                 {
@@ -42,6 +35,31 @@ namespace BetterNPCBoats
                     new ActiveFishingBoatData(new Vector3(891.1f, 176f, -395.2f), new Vector3(150.6f, 70f, -326.7f)),
                     new ActiveFishingBoatData(new Vector3(822.6f, 176f, -372.9f), new Vector3(293.7f, 100f, -436f)),
                     new ActiveFishingBoatData(new Vector3(767.2f, 176f, -322.5f), new Vector3(257.5f, 270f, -201.8f), true)
+                }
+            },
+            {
+                // al'nilem
+                2, new List<ActiveFishingBoatData>
+                {
+                    new ActiveFishingBoatData(new Vector3(174.3f, 100f, 262f), new Vector3(226.3f, 240f, 557f)),
+                    new ActiveFishingBoatData(new Vector3(-68.4f, 10f, -50.1f), new Vector3(-333f, 70f, -265f), true)
+                }
+            },
+            {
+                // neverdin
+                3, new List<ActiveFishingBoatData>
+                {
+                    new ActiveFishingBoatData(new Vector3(-82f, 0f, 382f), new Vector3(300f, 180f, 470f))
+                }
+            },
+            {
+                // albacore town
+                4, new List<ActiveFishingBoatData>
+                {
+                    new ActiveFishingBoatData(new Vector3(195.8f, 160f, 28.7f), new Vector3(-59.7f, 40f, 756.5f)),
+                    new ActiveFishingBoatData(new Vector3(-166f, 180f, -213f), new Vector3(-462.4f, 80f, 441.3f)),
+                    new ActiveFishingBoatData(new Vector3(-123.3f, 170f, -361.2f), new Vector3(-558.7f, 60f, -99.2f)),
+                    new ActiveFishingBoatData(new Vector3(-15.9f, 60f, -512.9f), new Vector3(-372.7f, 60f, -718.9f), true)
                 }
             },
             {
@@ -81,7 +99,19 @@ namespace BetterNPCBoats
                 // sage hills
                 13, new List<ActiveFishingBoatData>
                 {
-                    new ActiveFishingBoatData(new Vector3(-91.7f, 70f, -227.1f), new Vector3(-132.8f, 270f, -309.9f))
+                    new ActiveFishingBoatData(new Vector3(-91.7f, 70f, -227.1f), new Vector3(-132.8f, 270f, -309.9f)),
+                    new ActiveFishingBoatData(new Vector3(-74.6f, 340f, -337f), new Vector3(-87.1f, 100f, -570.6f)),
+                    new ActiveFishingBoatData(new Vector3(57.5f, 280f, -392.8f), new Vector3(191.7f, 10f, -552.5f), true)
+                }
+            },
+            {
+                // oasis
+                20, new List<ActiveFishingBoatData>
+                {
+                    new ActiveFishingBoatData(new Vector3(112.2f, 364f, -318f), new Vector3(145.5f, 270f, -831.7f)),
+                    new ActiveFishingBoatData(new Vector3(-141.5f, 270f, -528.4f), new Vector3(-321f, 60f, -851.6f)),
+                    new ActiveFishingBoatData(new Vector3(129.6f, 120f, 34.1f), new Vector3(772.1f, 240f, 305.6f)),
+                    new ActiveFishingBoatData(new Vector3(48.9f, 200f, 191.6f), new Vector3(753.6f, 260f, 160.6f), true),
                 }
             },
             {
@@ -124,16 +154,17 @@ namespace BetterNPCBoats
                 boat.transform.SetParent(island);
                 boat.transform.localPosition = new Vector3(data.position.x, 0f, data.position.z);
                 boat.transform.localEulerAngles = new Vector3(180f, data.position.y, 180f);
-                var controller = boat.GetComponent<BetterNPCFishingBoat>();
-                controller.isNightFisher = data.isNightFisher;
-                var target = new GameObject($"target {boat.name}");
-                target.transform.SetParent(island);                
-                target.transform.localPosition = new Vector3(data.targetPosition.x, 0f, data.targetPosition.z);
-                target.transform.localEulerAngles = new Vector3(180f, data.targetPosition.y, 180f);
-                controller.target = target.transform;
-                controller.sceneIndex = index;
-                activeFishingBoats.Add(boat);
                 boat.SetActive(true);
+
+                var controller = boat.GetComponent<BetterNPCFishingBoat>();
+                controller.isNightFisher = data.isNightFisher;                
+                controller.target.SetParent(island);                
+                controller.target.localPosition = new Vector3(data.targetPosition.x, 0f, data.targetPosition.z);
+                controller.target.localEulerAngles = new Vector3(180f, data.targetPosition.y, 180f);
+                controller.sceneIndex = index;
+                controller.Init();
+                activeFishingBoats.Add(boat);
+                
             }
         }
 

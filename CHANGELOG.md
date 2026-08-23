@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v0.2.0] - 2026-08-23
+
+### Added
+- NPC fishing boats to al'nilem, albacore town, oasis, and a couple more to sage hills.
+
+### Fixed
+- Teleporting messing up where the npc fishing boats are sailing to.
+
 ## [v0.1.0] - 2026-08-20
 
 ### Added
