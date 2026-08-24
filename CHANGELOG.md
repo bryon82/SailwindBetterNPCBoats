@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v0.3.1] - 2026-08-24
+
+### Fixed
+- Duplicated indexes for fishing boat scenes.
+
 ## [v0.3.0] - 2026-08-24
 
 ### Added

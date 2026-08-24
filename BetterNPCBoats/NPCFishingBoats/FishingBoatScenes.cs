@@ -11,7 +11,7 @@ namespace BetterNPCBoats
         internal static Stack<GameObject> AeFishingBoats { get; } = new Stack<GameObject>();
         private static List<GameObject> activeFishingBoats = new List<GameObject>();
 
-        private static Dictionary<int, List<ActiveFBData>> dataDict = new Dictionary<int, List<ActiveFBData>>
+        private static Dictionary<int, List<ActiveFBData>> fishingBoatScenes = new Dictionary<int, List<ActiveFBData>>
         {
             {
                 // gold rock city
@@ -130,7 +130,7 @@ namespace BetterNPCBoats
             },
             {
                 // eastwind
-                18, new List<ActiveFBData>
+                19, new List<ActiveFBData>
                 {
                     new ActiveFBData(new Vector3(332.3f, 0f, -67.1f), new Vector3(603.9f, 90f, 13.7f)),
                 }
@@ -180,7 +180,7 @@ namespace BetterNPCBoats
             },
             {
                 // onna
-                28, new List<ActiveFBData>
+                29, new List<ActiveFBData>
                 {
                     new ActiveFBData(new Vector3(17.7f, 80f, 60.9f), new Vector3(119.8f, 200f, 238.5f)),
                 }
@@ -227,12 +227,12 @@ namespace BetterNPCBoats
         internal static void SceneLoaded(Scene scene, LoadSceneMode _)
         {
             var index = scene.buildIndex;
-            if (!dataDict.ContainsKey(index))
+            if (!fishingBoatScenes.ContainsKey(index))
                 return;
 
             var island = Refs.islands[index];
             var region = island.gameObject.GetComponentInChildren<Port>().region;
-            foreach (var data in dataDict[index])
+            foreach (var data in fishingBoatScenes[index])
             {
                 GameObject boat;
                 if (region == PortRegion.alankh)
@@ -261,7 +261,7 @@ namespace BetterNPCBoats
         internal static void SceneUnloaded(Scene scene)
         {
             var index = scene.buildIndex;
-            if (!dataDict.ContainsKey(index))
+            if (!fishingBoatScenes.ContainsKey(index))
                 return;
 
             var island = Refs.islands[index];
