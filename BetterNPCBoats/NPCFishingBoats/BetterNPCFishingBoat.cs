@@ -70,7 +70,7 @@ namespace BetterNPCBoats
 
         private void FixedUpdate()
         {
-            if (!GameState.playing)
+            if (!GameState.playing || GameState.currentShipyard != null)
                 return;
             if (boatColCheckTimer <= 0f)
                 CheckOtherBoatCol();
@@ -89,7 +89,7 @@ namespace BetterNPCBoats
 
         private void Update()
         {
-            if (!GameState.playing)
+            if (!GameState.playing || GameState.currentShipyard != null)
                 return;
             var time = Sun.sun.localTime + timeAdjustment;
             var isDayTime = time > 5.5f && time < 17.5f;

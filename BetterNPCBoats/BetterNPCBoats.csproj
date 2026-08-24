@@ -64,7 +64,6 @@
     <Compile Include="BNB_Plugin.cs" />
     <Compile Include="NPCFishingBoats\FishingBoats.cs" />
     <Compile Include="NPCFishingBoats\BetterNPCFishingBoat.cs" />
-    <Compile Include="NPCFishingBoats\FishingBoatData.cs" />
     <Compile Include="NPCFishingBoats\FishingBoatScenes.cs" />
     <Compile Include="Patches\Storm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

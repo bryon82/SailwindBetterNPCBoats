@@ -13,7 +13,7 @@ namespace BetterNPCBoats
     {
         public const string PLUGIN_GUID = "com.raddude.betternpcboats";
         public const string PLUGIN_NAME = "BetterNPCBoats";
-        public const string PLUGIN_VERSION = "0.2.0";
+        public const string PLUGIN_VERSION = "0.3.0";
 
         internal static BNB_Plugin Instance { get; private set; }
         private static ManualLogSource _logger;

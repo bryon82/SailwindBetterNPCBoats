@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v0.3.0] - 2026-08-24
+
+### Added
+- NPC fishing boats to sunspire, mt. malefic, happy bay, eastwind, fire fish town, kicia bay, senna, onna, firefly grotto, dead cove, turtle island, old ankh, saffron island.
+
+### Fixed
+- NPC fishing boats acting erratically while player is in shipyard.
+
 ## [v0.2.0] - 2026-08-23
 
 ### Added

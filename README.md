@@ -1,12 +1,12 @@
 # BetterNPCBoats
 
-Adds a new NPC boat and adds them around ports.
+Adds new NPC boats and adds them around ports.
 
 ## NPC Fishing Boat
 
 A fisherman sails out to his fishing spot and starts fishing. The fishing boat has a lantern onboard that turns on when it is dark out. Some fishing boats fish during the day and some at night. Fishing boats will return to shore when a storm is near.
 
-NPC fishing boats have been added to: Gold Rock City, Al'Nilem, Neverdin, Albacore Town, Oasis, Dragon Cliffs, Sanctuary, Crab Beach, New Port, Sage Hills, Siren Song, and Fort Aestrin.
+NPC fishing boats have been added to: Gold Rock City, Al'Nilem, Neverdin, Albacore Town, Dragon Cliffs, Sanctuary, Crab Beach, New Port, Sage Hills, Fort Aestrin, Sunspire, Mount Malefic, Happy Bay, Eastwind, Oasis, Siren Song, Fire Fish Town, Kicia Bay, Senna, On'na, Firefly Grotto, Dead Cove, Turtle Island, Old Ankh, and Saffron Island.
 
 More will be added.
 
